@@ -1,0 +1,12 @@
+CREATE TABLE tb_people (
+ id VARCHAR(255) PRIMARY KEY,
+ name VARCHAR(255) NOT NULL,
+ email VARCHAR(255) NOT NULL UNIQUE,
+ date_of_birth DATE NOT NULL,
+ gender VARCHAR(6) NOT NULL,
+ created_at TIMESTAMP NOT NULL,
+ updated_at TIMESTAMP,
+ country VARCHAR(255) NOT NULL,
+ state VARCHAR(255) NOT NULL,
+ city VARCHAR(255) NOT NULL
+);
