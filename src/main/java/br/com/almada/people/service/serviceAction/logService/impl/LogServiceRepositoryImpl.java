@@ -6,15 +6,15 @@ import br.com.almada.people.mapper.LogMapper;
 import br.com.almada.people.repository.LogRepository;
 import br.com.almada.people.service.serviceAction.logService.LogService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Primary
+//@Primary
 @Service
 @RequiredArgsConstructor
-public class LogServiceImpl implements LogService {
+public class LogServiceRepositoryImpl implements LogService {
 
     private final LogRepository logRepository;
 
@@ -22,7 +22,9 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public List<LogResponseDTO> findAll() {
-        return logMapper.toDTOList(logRepository.findAll());
+        return logMapper.toDTOList(logRepository.findAll(
+                Sort.by(Sort.Direction.DESC, "eventTime")
+        ));
     }
 
     @Override

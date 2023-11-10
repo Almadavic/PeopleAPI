@@ -19,9 +19,8 @@ import java.util.UUID;
 public class Person {
 
     @Id
-    @Setter(AccessLevel.NONE)
     @Column(name = "id")
-    private String id = UUID.randomUUID().toString();
+    private final String id = UUID.randomUUID().toString();
 
     @Column(name = "name", nullable = false)
     private String name;
