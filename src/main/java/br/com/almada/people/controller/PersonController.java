@@ -6,7 +6,6 @@ import br.com.almada.people.dto.response.StatusDataCollectionLinksResponseDTO;
 import br.com.almada.people.dto.response.StatusDataResponseDTO;
 import br.com.almada.people.dto.response.PersonResponseDTO;
 import br.com.almada.people.dto.response.StatusResponseDTO;
-import br.com.almada.people.service.customException.ResourceNotFoundException;
 import br.com.almada.people.service.serviceAction.personService.impl.PersonServiceImpl;
 import br.com.almada.people.util.HandleResponseStatusWithList;
 import jakarta.validation.Valid;
@@ -29,12 +28,6 @@ public class PersonController implements PersonSwagger {
     @Override
     @GetMapping
     public ResponseEntity<StatusDataCollectionLinksResponseDTO<List<PersonResponseDTO>>> findAll(@RequestParam(value = "name", required = false) String name){
-//        try {
-//            Thread.sleep(5000);
-//            throw new ResourceNotFoundException("Erro no servidor");
-//        } catch (InterruptedException ex) {
-//            ex.printStackTrace();
-//        }
         return ResponseEntity.ok().body(handlePeopleCollectionJsonFormat(personService.findAll(name)));
     }
 

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Primary
+//@Primary
 @Service
 @RequiredArgsConstructor
 public class LogServiceEntityManagerImpl implements LogService {

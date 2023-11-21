@@ -23,5 +23,4 @@ public record StandardError(
         @JsonProperty(value = "path")
         String path
 
-) {
-}
+) { }

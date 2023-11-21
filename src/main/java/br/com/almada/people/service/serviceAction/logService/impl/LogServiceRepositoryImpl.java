@@ -6,12 +6,13 @@ import br.com.almada.people.mapper.LogMapper;
 import br.com.almada.people.repository.LogRepository;
 import br.com.almada.people.service.serviceAction.logService.LogService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-//@Primary
+@Primary
 @Service
 @RequiredArgsConstructor
 public class LogServiceRepositoryImpl implements LogService {
